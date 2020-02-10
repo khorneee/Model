@@ -1,0 +1,15 @@
+version: "3"
+services:
+  sql:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+        ACCEPT_EULA: "Y"
+        SA_PASSWORD: "Str0ngPassword"
+    ports: 
+      - "1433:1433"
+    networks:
+      - esnet    
+
+networks:
+  esnet:
+    driver: bridge
